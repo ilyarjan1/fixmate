@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model ServiceRequest {
+  id              String   @id @default(cuid())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  // Service Details
+  applianceType   String   // Dryer, Washer, etc.
+  issueType       String
+  description     String
+  urgency         String   // Today, This week, Flexible
+  
+  // Customer Info
+  name            String
+  phone           String
+  email           String?
+  address         String?
+  preferredContact String // call/text/email
+  
+  // Status
+  status          String   @default("new") // new, in_progress, completed, closed
+  internalNotes   String?
+  
+  images          String?  // JSON string or comma separated URLs
+}
+
+model AdminUser {
+  id        String @id @default(cuid())
+  email     String @unique
+  password  String // Hashed
+}

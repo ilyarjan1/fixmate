@@ -30,7 +30,7 @@ export default function ContactPage() {
                                 </CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <p className="text-lg font-medium">support@fixmate.com</p>
+                                <p className="text-lg font-medium">iamilyarjan@gmail.com</p>
                                 <p className="text-sm text-muted-foreground">Typical response time: 2 hours</p>
                             </CardContent>
                         </Card>
@@ -55,10 +55,20 @@ export default function ContactPage() {
                                 </CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <p className="text-lg font-medium">Metro Detroit & Suburbs</p>
-                                <p className="text-sm text-muted-foreground">Wayne, Oakland, and Macomb Counties</p>
-                                <div className="h-40 bg-muted mt-4 rounded-md flex items-center justify-center">
-                                    <span className="text-muted-foreground">Map Placeholder</span>
+                                <p className="text-lg font-medium">21000 W 10 Mile Rd</p>
+                                <p className="text-sm text-muted-foreground">Southfield, MI 48075</p>
+                                <p className="text-sm text-muted-foreground mt-1">Serving Metro Detroit & Suburbs</p>
+                                <div className="mt-4 rounded-md overflow-hidden border">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2943.8!2d-83.2644!3d42.4789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824c8e6c8c8c8c8%3A0x1234567890abcdef!2s21000%20W%2010%20Mile%20Rd%2C%20Southfield%2C%20MI%2048075!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                                        width="100%"
+                                        height="200"
+                                        style={{ border: 0 }}
+                                        allowFullScreen
+                                        loading="lazy"
+                                        referrerPolicy="no-referrer-when-downgrade"
+                                        title="FixMate Location - 21000 W 10 Mile Rd, Southfield, MI"
+                                    />
                                 </div>
                             </CardContent>
                         </Card>

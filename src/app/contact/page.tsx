@@ -100,6 +100,51 @@ export default function ContactPage() {
                             </CardContent>
                         </Card>
 
+                        <Card>
+                            <CardHeader>
+                                <CardTitle className="flex items-center gap-2">
+                                    <MapPin className="h-5 w-5 text-primary" /> Service Area
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                {selectedCity === "Chicago" ? (
+                                    <>
+                                        <p className="text-lg font-medium">5316 S Dorchester Ave</p>
+                                        <p className="text-sm text-muted-foreground">Chicago, IL 60615</p>
+                                        <div className="mt-4 rounded-md overflow-hidden border">
+                                            <iframe
+                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2974.1444!2d-87.5919!3d41.8000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2941edc8c8c7%3A0x6d888e239e240a5a!2s5316%20S%20Dorchester%20Ave%2C%20Chicago%2C%20IL%2060615!5e0!3m2!1sen!2sus!4v1704604800000!5m2!1sen!2sus"
+                                                width="100%"
+                                                height="250"
+                                                style={{ border: 0 }}
+                                                allowFullScreen
+                                                loading="lazy"
+                                                referrerPolicy="no-referrer-when-downgrade"
+                                                title="FixMate Location - Chicago"
+                                            />
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                        <p className="text-lg font-medium">21000 W 10 Mile Rd</p>
+                                        <p className="text-sm text-muted-foreground">Southfield, MI 48075</p>
+                                        <div className="mt-4 rounded-md overflow-hidden border">
+                                            <iframe
+                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2943.8!2d-83.2644!3d42.4789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824c8e6c8c8c8c8%3A0x1234567890abcdef!2s21000%20W%2010%20Mile%20Rd%2C%20Southfield%2C%20MI%2048075!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                                                width="100%"
+                                                height="250"
+                                                style={{ border: 0 }}
+                                                allowFullScreen
+                                                loading="lazy"
+                                                referrerPolicy="no-referrer-when-downgrade"
+                                                title="FixMate Location - Detroit"
+                                            />
+                                        </div>
+                                    </>
+                                )}
+                            </CardContent>
+                        </Card>
+
                     </div>
 
                     {/* Contact Form */}

@@ -21,7 +21,7 @@ export function Step3Contact({ form }: StepProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-3">
                     <Label htmlFor="name">Full Name</Label>
-                    <Input id="name" placeholder="John Doe" {...register("name")} />
+                    <Input id="name" placeholder="Michael Jordan" {...register("name")} />
                     {errors.name && <p className="text-sm text-destructive">{errors.name.message}</p>}
                 </div>
 
@@ -34,7 +34,7 @@ export function Step3Contact({ form }: StepProps) {
 
             <div className="space-y-3">
                 <Label htmlFor="email">Email Address <span className="text-muted-foreground font-normal">(Optional)</span></Label>
-                <Input id="email" type="email" placeholder="john@example.com" {...register("email")} />
+                <Input id="email" type="email" placeholder="michael@example.com" {...register("email")} />
                 {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
             </div>
 

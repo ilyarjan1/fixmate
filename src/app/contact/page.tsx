@@ -141,7 +141,7 @@ export default function ContactPage() {
                                                 id="name"
                                                 {...register("name")}
                                                 className={`w-full rounded-md border p-2 text-sm bg-background ${errors.name ? 'border-destructive' : 'border-input'}`}
-                                                placeholder="Your name"
+                                                placeholder="Michael Jordan"
                                             />
                                             {errors.name && <p className="text-xs text-destructive">{errors.name.message}</p>}
                                         </div>

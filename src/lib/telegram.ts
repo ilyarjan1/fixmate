@@ -3,8 +3,8 @@
  * Requires TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID environment variables.
  */
 export async function sendTelegramNotification(message: string) {
-    const token = process.env.TELEGRAM_BOT_TOKEN
-    const chatId = process.env.TELEGRAM_CHAT_ID
+    const token = process.env.TELEGRAM_BOT_TOKEN?.trim()
+    const chatId = process.env.TELEGRAM_CHAT_ID?.trim()
 
     if (!token || !chatId) {
         console.warn("Telegram notification skipped: Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID", {
@@ -15,6 +15,7 @@ export async function sendTelegramNotification(message: string) {
         })
         return { success: false, error: "Missing environment variables" }
     }
+
 
     try {
         const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {

@@ -14,9 +14,14 @@ export async function GET() {
             NODE_ENV: process.env.NODE_ENV,
             hasToken: !!process.env.TELEGRAM_BOT_TOKEN,
             hasChatId: !!process.env.TELEGRAM_CHAT_ID,
+            tokenLength: process.env.TELEGRAM_BOT_TOKEN?.length,
+            tokenHasWhitespace: /\s/.test(process.env.TELEGRAM_BOT_TOKEN || ""),
+            tokenHasQuotes: /^["'].*["']$/.test(process.env.TELEGRAM_BOT_TOKEN || ""),
             tokenPrefix: process.env.TELEGRAM_BOT_TOKEN ? `${process.env.TELEGRAM_BOT_TOKEN.substring(0, 5)}...` : null,
-            chatId: process.env.TELEGRAM_CHAT_ID
+            chatId: process.env.TELEGRAM_CHAT_ID,
+            chatIdLength: process.env.TELEGRAM_CHAT_ID?.length
         },
         result
     })
 }
+

@@ -18,6 +18,8 @@ export const serviceRequestSchema = z.object({
 
     // Photos (Optional, URLs)
     photos: z.array(z.string()).optional(),
+
+    city: z.enum(["Detroit", "Chicago"]),
 })
 
 export type ServiceRequestFormValues = z.infer<typeof serviceRequestSchema>
@@ -27,6 +29,7 @@ export const contactMessageSchema = z.object({
     phone: z.string().min(10, "Please enter a valid phone number."),
     email: z.string().email("Please enter a valid email address."),
     message: z.string().min(10, "Message must be at least 10 characters."),
+    city: z.enum(["Detroit", "Chicago"]),
 })
 
 export type ContactMessageFormValues = z.infer<typeof contactMessageSchema>

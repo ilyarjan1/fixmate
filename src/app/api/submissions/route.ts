@@ -29,12 +29,13 @@ export async function POST(request: Request) {
                 preferredContact: data.preferredContact,
                 status: "new",
                 images: data.photos ? JSON.stringify(data.photos) : null,
+                city: data.city,
             },
         })
 
         // Send Telegram Notification
         const message = `
-<b>🚀 New Service Request!</b>
+<b>🚀 [${submission.city.toUpperCase()}] New Service Request!</b>
 <b>Customer:</b> ${submission.name}
 <b>Appliance:</b> ${submission.applianceType}
 <b>Issue:</b> ${submission.issueType}

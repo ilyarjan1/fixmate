@@ -23,12 +23,13 @@ export async function POST(request: Request) {
                 email: data.email,
                 message: data.message,
                 status: "unread",
+                city: data.city,
             },
         })
 
         // Send Telegram Notification
         const telegramMessage = `
-<b>📩 New Contact Message!</b>
+<b>📩 [${messageRecord.city.toUpperCase()}] New Contact Message!</b>
 <b>Name:</b> ${messageRecord.name}
 <b>Phone:</b> ${messageRecord.phone}
 <b>Email:</b> ${messageRecord.email}

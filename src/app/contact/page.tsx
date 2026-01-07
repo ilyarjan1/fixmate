@@ -74,7 +74,7 @@ export default function ContactPage() {
                             </CardHeader>
                             <CardContent>
                                 <p className="text-lg font-medium">iamilyarjan@gmail.com</p>
-                                <p className="text-sm text-muted-foreground">Typical response time: 2 hours</p>
+                                <p className="text-sm text-muted-foreground">Typical response time: 15 minutes</p>
                             </CardContent>
                         </Card>
 
@@ -85,36 +85,38 @@ export default function ContactPage() {
                                 </CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <p className="text-sm">Mon-Fri: 8:00 AM - 6:00 PM</p>
-                                <p className="text-sm">Sat: 9:00 AM - 4:00 PM</p>
-                                <p className="text-sm text-muted-foreground mt-1">Closed Sundays</p>
+                                <p className="text-sm">Mon-Fri: 9:00 AM - 6:00 PM</p>
+                                <p className="text-sm">Sat-Sun: 10:00 AM - 6:00 PM</p>
                             </CardContent>
                         </Card>
 
-                        <Card>
-                            <CardHeader>
-                                <CardTitle className="flex items-center gap-2">
-                                    <MapPin className="h-5 w-5 text-primary" /> Service Area
-                                </CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-lg font-medium">21000 W 10 Mile Rd</p>
-                                <p className="text-sm text-muted-foreground">Southfield, MI 48075</p>
-                                <p className="text-sm text-muted-foreground mt-1">Serving Metro Detroit & Suburbs</p>
-                                <div className="mt-4 rounded-md overflow-hidden border">
-                                    <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2943.8!2d-83.2644!3d42.4789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824c8e6c8c8c8c8%3A0x1234567890abcdef!2s21000%20W%2010%20Mile%20Rd%2C%20Southfield%2C%20MI%2048075!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
-                                        width="100%"
-                                        height="200"
-                                        style={{ border: 0 }}
-                                        allowFullScreen
-                                        loading="lazy"
-                                        referrerPolicy="no-referrer-when-downgrade"
-                                        title="FixMate Location - 21000 W 10 Mile Rd, Southfield, MI"
-                                    />
-                                </div>
-                            </CardContent>
-                        </Card>
+                        <div className="grid grid-cols-1 gap-6">
+                            <Card className="border-primary/20 bg-primary/5">
+                                <CardHeader>
+                                    <CardTitle className="flex items-center gap-2 text-primary">
+                                        <MapPin className="h-5 w-5" /> Detroit Metro
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="font-bold text-lg">(313) 919-3223</p>
+                                    <p className="text-sm text-muted-foreground mb-2">iamilyarjan@gmail.com</p>
+                                    <p className="text-sm">21000 W 10 Mile Rd, Southfield, MI 48075</p>
+                                </CardContent>
+                            </Card>
+
+                            <Card className="border-primary/20 bg-primary/5">
+                                <CardHeader>
+                                    <CardTitle className="flex items-center gap-2 text-primary">
+                                        <MapPin className="h-5 w-5" /> Chicago Metro
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="font-bold text-lg">+1 (773) 690-9055</p>
+                                    <p className="text-sm text-muted-foreground mb-2">kasymasym@gmail.com</p>
+                                    <p className="text-sm italic">Serving Chicago & Suburbs</p>
+                                </CardContent>
+                            </Card>
+                        </div>
                     </div>
 
                     {/* Contact Form */}
@@ -134,6 +136,17 @@ export default function ContactPage() {
                             <>
                                 <h2 className="text-xl font-semibold mb-4">Send us a message</h2>
                                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                                    <div className="space-y-2">
+                                        <label className="text-sm font-medium">Select Location</label>
+                                        <div className="flex gap-4">
+                                            <label className="flex items-center gap-2 text-sm cursor-pointer">
+                                                <input type="radio" value="Detroit" {...register("city")} defaultChecked /> Detroit
+                                            </label>
+                                            <label className="flex items-center gap-2 text-sm cursor-pointer">
+                                                <input type="radio" value="Chicago" {...register("city")} /> Chicago
+                                            </label>
+                                        </div>
+                                    </div>
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         <div className="space-y-2">
                                             <label htmlFor="name" className="text-sm font-medium">Name</label>

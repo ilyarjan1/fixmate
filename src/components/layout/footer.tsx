@@ -17,7 +17,7 @@ export function Footer() {
                             Appliance repair done right.
                         </p>
                         <p className="text-sm text-muted-foreground/70 leading-relaxed">
-                            Fast, reliable service for Metro Detroit and surrounding areas.
+                            Fast, reliable service for Metro Detroit and Chicago Metro areas.
                         </p>
                     </div>
 

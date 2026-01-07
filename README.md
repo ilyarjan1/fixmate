@@ -211,4 +211,4 @@ MIT
 
 ## Support
 
-For issues or questions, contact: support@fixmate.com
+For issues or questions, contact: iamilyarjan@gmail.com

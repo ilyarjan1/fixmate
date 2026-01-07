@@ -49,7 +49,7 @@ export function Footer() {
                             </li>
                             <li className="flex items-center gap-2">
                                 <Mail className="h-4 w-4 text-primary shrink-0" />
-                                <a href="mailto:support@fixmate.com" className="hover:text-primary transition-colors">support@fixmate.com</a>
+                                <a href="mailto:iamilyarjan@gmail.com" className="hover:text-primary transition-colors">iamilyarjan@gmail.com</a>
                             </li>
                             <li className="flex items-center gap-2">
                                 <MapPin className="h-4 w-4 text-primary shrink-0" />

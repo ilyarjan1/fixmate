@@ -29,15 +29,7 @@ export function Reviews() {
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold tracking-tight mb-3">What Our Customers Say</h2>
                     <p className="text-muted-foreground/70 text-lg">
-                        Verified 5-star reviews from our{" "}
-                        <a
-                            href="https://www.thumbtack.com/il/chicago/handyman/fixmate/service/565466106144251909"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-primary hover:underline"
-                        >
-                            Thumbtack profile
-                        </a>
+                        Verified 5-star reviews from our Thumbtack profile
                     </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -59,16 +51,6 @@ export function Reviews() {
                             </CardContent>
                         </Card>
                     ))}
-                </div>
-                <div className="mt-12 text-center">
-                    <a
-                        href="https://www.thumbtack.com/il/chicago/handyman/fixmate/service/565466106144251909"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-primary font-semibold hover:underline"
-                    >
-                        Read more reviews on Thumbtack
-                    </a>
                 </div>
             </div>
         </section>

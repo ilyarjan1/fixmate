@@ -46,10 +46,19 @@ ${messageRecord.message}
         return NextResponse.json({ success: true, id: messageRecord.id })
 
     } catch (error: any) {
-        console.error("Contact submission failed:", error)
+        console.error("Contact submission failed with full details:", {
+            message: error.message,
+            stack: error.stack,
+            code: error.code,
+            meta: error.meta,
+            clientVersion: error.clientVersion
+        })
+
         return NextResponse.json({
             error: "Internal Server Error",
-            details: process.env.NODE_ENV === "development" ? error.message : undefined
+            message: error.message,
+            details: process.env.NODE_ENV === "development" ? error.message : "Check server logs for details"
         }, { status: 500 })
     }
 }
+

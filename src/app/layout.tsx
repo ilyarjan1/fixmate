@@ -12,6 +12,9 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "FixMate - Fast Appliance Repair",
   description: "Reliable dryer, washer, refrigerator, and oven repair services.",
+  verification: {
+    google: "lqgKo7KzRkpVSWMyFpDyf7SjQQtWuz9S9nJdoQ7RsOQ",
+  },
 };
 
 export default function RootLayout({

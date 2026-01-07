@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { DryerIcon, WasherIcon, RefrigeratorIcon, OvenIcon, StoveIcon } from "@/components/ui/appliance-icons";
+import { Reviews } from "@/components/layout/reviews";
 
 const appliances = [
   { name: "Dryer", icon: DryerIcon },
@@ -95,6 +96,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Reviews Section */}
+      <Reviews />
 
       {/* Services Grid */}
       <section className="py-20">

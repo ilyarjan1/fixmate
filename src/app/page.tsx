@@ -42,7 +42,7 @@ export default function Home() {
                 <CheckCircle className="h-3.5 w-3.5" /> Same-day service
               </Badge>
               <Badge variant="info" className="gap-1.5 px-3 py-1.5">
-                <MapPin className="h-3.5 w-3.5" /> Metro Detroit
+                <MapPin className="h-3.5 w-3.5" /> Metro Detroit & Chicago
               </Badge>
               <Badge variant="info" className="gap-1.5 px-3 py-1.5">
                 <Shield className="h-3.5 w-3.5" /> Licensed & insured

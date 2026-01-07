@@ -17,10 +17,16 @@ export default function ContactPage() {
         register,
         handleSubmit,
         reset,
+        watch,
         formState: { errors },
     } = useForm<ContactMessageFormValues>({
         resolver: zodResolver(contactMessageSchema),
+        defaultValues: {
+            city: "Detroit",
+        }
     });
+
+    const selectedCity = watch("city");
 
     const onSubmit = async (data: ContactMessageFormValues) => {
         setIsSubmitting(true);
@@ -61,7 +67,9 @@ export default function ContactPage() {
                                 </CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <p className="text-lg font-medium">(313) 919-3223</p>
+                                <p className="text-lg font-medium">
+                                    {selectedCity === "Chicago" ? "+1 (773) 690-9055" : "(313) 919-3223"}
+                                </p>
                                 <p className="text-sm text-muted-foreground">Call or Text anytime</p>
                             </CardContent>
                         </Card>
@@ -73,7 +81,9 @@ export default function ContactPage() {
                                 </CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <p className="text-lg font-medium">iamilyarjan@gmail.com</p>
+                                <p className="text-lg font-medium">
+                                    {selectedCity === "Chicago" ? "kasymasym@gmail.com" : "iamilyarjan@gmail.com"}
+                                </p>
                                 <p className="text-sm text-muted-foreground">Typical response time: 15 minutes</p>
                             </CardContent>
                         </Card>
@@ -90,33 +100,6 @@ export default function ContactPage() {
                             </CardContent>
                         </Card>
 
-                        <div className="grid grid-cols-1 gap-6">
-                            <Card className="border-primary/20 bg-primary/5">
-                                <CardHeader>
-                                    <CardTitle className="flex items-center gap-2 text-primary">
-                                        <MapPin className="h-5 w-5" /> Detroit Metro
-                                    </CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="font-bold text-lg">(313) 919-3223</p>
-                                    <p className="text-sm text-muted-foreground mb-2">iamilyarjan@gmail.com</p>
-                                    <p className="text-sm">21000 W 10 Mile Rd, Southfield, MI 48075</p>
-                                </CardContent>
-                            </Card>
-
-                            <Card className="border-primary/20 bg-primary/5">
-                                <CardHeader>
-                                    <CardTitle className="flex items-center gap-2 text-primary">
-                                        <MapPin className="h-5 w-5" /> Chicago Metro
-                                    </CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="font-bold text-lg">+1 (773) 690-9055</p>
-                                    <p className="text-sm text-muted-foreground mb-2">kasymasym@gmail.com</p>
-                                    <p className="text-sm italic">Serving Chicago & Suburbs</p>
-                                </CardContent>
-                            </Card>
-                        </div>
                     </div>
 
                     {/* Contact Form */}

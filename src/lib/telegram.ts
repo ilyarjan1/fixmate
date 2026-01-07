@@ -9,9 +9,11 @@ export async function sendTelegramNotification(message: string) {
     if (!token || !chatId) {
         console.warn("Telegram notification skipped: Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID", {
             hasToken: !!token,
-            hasChatId: !!chatId
+            hasChatId: !!chatId,
+            tokenPrefix: token ? `${token.substring(0, 5)}...` : null,
+            chatId: chatId
         })
-        return
+        return { success: false, error: "Missing environment variables" }
     }
 
     try {
@@ -27,17 +29,22 @@ export async function sendTelegramNotification(message: string) {
             }),
         })
 
+        const result = await response.json()
+
         if (!response.ok) {
-            const error = await response.json()
             console.error("Telegram notification failed:", {
                 status: response.status,
                 statusText: response.statusText,
-                error
+                result
             })
-        } else {
-            console.log("Telegram notification sent successfully")
+            return { success: false, error: result.description || "API Error", details: result }
         }
-    } catch (error) {
+
+        console.log("Telegram notification sent successfully")
+        return { success: true, result }
+    } catch (error: any) {
         console.error("Error sending Telegram notification:", error)
+        return { success: false, error: error.message || "Network error" }
     }
 }
+

@@ -41,20 +41,13 @@ export function Footer() {
                     </div>
 
                     <div>
-                        <h3 className="font-semibold mb-4 text-base">Contact</h3>
+                        <h3 className="font-semibold mb-4 text-base">Service Areas</h3>
                         <ul className="space-y-3 text-sm text-muted-foreground/70">
-                            <li className="flex items-center gap-2">
-                                <Phone className="h-4 w-4 text-primary shrink-0" />
-                                <a href="tel:+13139193223" className="hover:text-primary transition-colors">(313) 919-3223</a>
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <Mail className="h-4 w-4 text-primary shrink-0" />
-                                <a href="mailto:iamilyarjan@gmail.com" className="hover:text-primary transition-colors">iamilyarjan@gmail.com</a>
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <MapPin className="h-4 w-4 text-primary shrink-0" />
-                                <span>Metro Detroit, MI</span>
-                            </li>
+                            <li>Southfield, MI</li>
+                            <li>Detroit, MI</li>
+                            <li>Oak Park, MI</li>
+                            <li>Farmington Hills, MI</li>
+                            <li>Metro Detroit Area</li>
                         </ul>
                     </div>
                 </div>
